@@ -1,56 +1,30 @@
 <script>
-  import svelteLogo from "./assets/svelte.svg";
-  import Counter from "./lib/Counter.svelte";
+  import New from "./lib/New/index.svelte";
+  import Showcase from "./lib/Showcase.svelte";
+  import Readme from "./lib/Readme.svelte";
+  import Navigation from "./lib/Navigation.svelte";
+
+  let currentRoute = "New";
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a
-      class="bg-red-200"
-      href="https://svelte.dev"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1 class="bg-red-200">Vite + Svelte</h1>
+<main class="h-screen text-left pt-12">
+  <Navigation bind:currentRoute />
 
-  <div class="card">
-    <Counter />
-  </div>
+  {#if currentRoute === "New"}
+    <New />
+  {/if}
 
-  <p>
-    Check out <a
-      href="https://github.com/sveltejs/kit#readme"
-      target="_blank"
-      rel="noreferrer">SvelteKit</a
-    >, the official Svelte app framework powered by Vite!
-  </p>
+  {#if currentRoute === "Showcase"}
+    <Showcase />
+  {/if}
 
-  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+  {#if currentRoute === "Readme"}
+    <Readme />
+  {/if}
 </main>
 
 <style>
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
 </style>
