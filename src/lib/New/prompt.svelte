@@ -1,14 +1,37 @@
 <script>
+  import axios from "axios";
+
   let prompts = [];
 
   let currentQuestion = "";
 
-  function handleOnSubmit() {
+  async function handleOnSubmit() {
     if (currentQuestion.length === 0) {
       return;
     }
 
     console.log(currentQuestion);
+
+    const params = new URLSearchParams();
+    params.append("selectionStart", "0");
+    params.append("selectionEnd", "0");
+    params.append("title", "Applying color with JavaScript");
+    params.append("useContext", "true");
+    params.append("question", currentQuestion);
+
+    try {
+      const res = await axios.post(
+        `https://codact.dev/?gen=clb1oa0by0018vy72th2fsvwi`,
+        {
+          headers: {},
+          params: params,
+        }
+      );
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+
     prompts.push({
       question: currentQuestion,
       answer:

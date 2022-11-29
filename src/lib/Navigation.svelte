@@ -10,9 +10,9 @@
   <div
     class="bg-white fixed top-0 flex border-b left-0 border-zinc-200 h-12 w-full"
   >
-    <div class="flex-none h-12 w-14">
-      <img class="mt-3 mx-auto h-6" alt="logo" src={ExtensionalLogo} />
-    </div>
+    <button class="flex-none h-12 w-14" on:click={() => (currentRoute = "New")}>
+      <img class="mx-auto h-6" alt="logo" src={ExtensionalLogo} />
+    </button>
 
     <div class="flex-grow relative">
       {#each options as option}
