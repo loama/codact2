@@ -30,6 +30,13 @@
 
     <div class="box-border border-b border-zinc-200 h-1/2 w-full">
       <div class="p-2 font-bold text-sm">VISUAL RESULT</div>
+      <canvas class="w-full" id="myCanvas" />
     </div>
   </div>
 </div>
+
+<style>
+  #myCanvas {
+    height: calc(100% - 36px);
+  }
+</style>

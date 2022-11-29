@@ -32,6 +32,37 @@
       console.log(e);
     }
 
+    /* let functionText = `
+      var c = document.getElementById('myCanvas');
+      var ctx = c.getContext('2d');
+      ctx.beginPath();
+      ctx.arc(100, 75, 50, 0, Math.PI * 2, true);
+      ctx.stroke();
+      var c = document.getElementById('myCanvas');
+      var ctx = c.getContext('2d');
+      ctx.beginPath();
+      ctx.arc(100, 75, 50, 0, Math.PI * 2, true);
+
+      for (var i = 0; i < 10; i++) {
+          ctx.strokeStyle = "rgb(" + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) + ")";
+          ctx.stroke();
+      }
+      var c = document.getElementById('myCanvas');
+      var ctx = c.getContext('2d');
+      ctx.beginPath();
+      ctx.arc(100, 75, 50, 0, Math.PI * 2, true);
+
+      var throb = setInterval(function() {
+          ctx.clearRect(0, 0, c.width, c.height);
+
+          ctx.strokeStyle = "rgb(" + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) + ")";
+          ctx.lineWidth = 5;
+          ctx.stroke();
+      }, 200);
+    `;
+
+    eval(functionText); */
+
     prompts.push({
       question: currentQuestion,
       answer:
@@ -71,7 +102,7 @@
       class="absolute duration-300 h-8 mt-1 right-1 px-3 rounded-sm transition
         {currentQuestion.length > 0
         ? 'bg-green-600 text-white'
-        : 'bg-zinc-200'}"
+        : 'bg-zinc-200 text-zinc-600'}"
       value="Send"
     />
   </form>
